@@ -78,7 +78,7 @@ val area = {
 }
 
 ```
-###### Loops
+##### Loops
 ```
 val n =10
 for (i <- 1 to n) print(i)
@@ -88,3 +88,7 @@ for (i <- 1 to n) print(i)
 ```
 for (s <- "Hello") print(s)
 ```
+###### Multiple generators
+``` for (i <- 1 to 3; j <- 1 to 2) println (i+j)   j will be executed 2 times each i iterations ````
+###### Guards
+``` for (i <- 1 to 3; j <- 1 to 2 if i!=j) println (i+j)
