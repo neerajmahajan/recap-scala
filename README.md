@@ -98,5 +98,18 @@ for (s <- "Hello") print(s)
 
 ##### Functions
 * return type is inferred
-* = is used when a function returns a value
-def sum(i:Int,j:Int) = i+j
+* = is used when a function returns a value, otherwise they are procedure. If = is not used Unit is returned from function
+``` def sum(i:Int,j:Int) = i+j ```
+``` def sum(i:Int,j:Int):Int = i+j ```
+* We can have **named** parameters in a function. Simillar to Python
+* We can have **default** parameter in a function. Simillar to Python
+* Vargs in function
+```
+def sum(args: Int*) = {
+   var result =0;
+   for (arg <- args) result =+ arg
+   result
+}
+
+```
+
