@@ -51,5 +51,9 @@ x*x*x+67*7
 ``` "Hello(4)" gives o```
 ``` "Hello".apply(4) same as above ```
 
-###### Imports can be anywhere in the program
+###### Imports
+* Imports can be anywhere in the program.
 * ``` * is replaced by _ in scala ```
+* 1.to(10).map(sqtr(_))
+
+
