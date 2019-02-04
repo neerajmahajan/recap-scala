@@ -114,3 +114,14 @@ def sum(args: Int*) = {
 Cant pass seq object in above function. to use seq do val s = sum(1 to 5 : _*)
 ```
 
+##### Collections
+
+###### Arrays
+* val nums = Array[Int](10); // All intialized to 0
+* val stringArray = Array("Hello" , "World") // The type is inferred
+* Assigning value to array ``` stringArray(0) = "Remove Hello" ```
+* Assigning value to array ``` stringArray(0) ```
+* Iterating array
+```
+for (arr <- stringArray) println arr
+```
