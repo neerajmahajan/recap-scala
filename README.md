@@ -79,6 +79,7 @@ val area = {
 
 ```
 ##### Loops
+###### For
 ```
 val n =10
 for (i <- 1 to n) print(i)
@@ -89,6 +90,13 @@ for (i <- 1 to n) print(i)
 for (s <- "Hello") print(s)
 ```
 ###### Multiple generators
-``` for (i <- 1 to 3; j <- 1 to 2) println (i+j)   j will be executed 2 times each i iterations ````
+``` for (i <- 1 to 3; j <- 1 to 2) println (i+j)  // j will be executed 2 times each i iterations ```
 ###### Guards
-``` for (i <- 1 to 3; j <- 1 to 2 if i!=j) println (i+j)
+``` for (i <- 1 to 3; j <- 1 to 2 if i!=j) println (i+j) ```
+###### For Yield - for collecting results - similar to map functions
+``` for (i <- 1 to 10) yield i % 3``` // returns a vector here
+
+##### Functions
+* return type is inferred
+* = is used when a function returns a value
+def sum(i:Int,j:Int) = i+j
