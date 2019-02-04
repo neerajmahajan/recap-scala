@@ -36,6 +36,9 @@ i ="String"  // will give compile error
 * Everything is object eg ``` 1.to(10) ```
 * Scala provides lot of additional method for java string eg
 ``` "Hello".intersect("world") // lo ```
+
+``` "ABC".sum ``` 'A' + 'B' + 'C' - return type of same value ie character Ae
+``` "ABC".sum.toInt will give integer value ```
 * We can use regular arthemetic operators on big numbers
 ``` 
 var x:BigInt = 103434;
@@ -54,6 +57,6 @@ x*x*x+67*7
 ###### Imports
 * Imports can be anywhere in the program.
 * ``` * is replaced by _ in scala ```
-* 1.to(10).map(sqtr(_))
+* 1.to(10).map(sqtr(_)) will applu sqtr on the each element of range and will return a sequence.
 
 
