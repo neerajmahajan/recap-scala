@@ -59,4 +59,32 @@ x*x*x+67*7
 * ``` * is replaced by _ in scala ```
 * 1.to(10).map(sqtr(_)) will applu sqtr on the each element of range and will return a sequence.
 
+###### Branching
 
+* If expression always return a value
+``` 
+val x =4
+val i = if (x > 1) 1 else 0
+```
+* If the if blocks have different data types, then data type will be super of both expressions eg ANY
+* Unit is simillar to void.
+* Blocks are expression. Blocks in scala returns the last value of block. If the last value is assignment, then return value will be Unit
+```
+val area = {
+   val l = 1;
+   val b = 2;
+   val w = 3;
+   l*b*w
+}
+
+```
+###### Loops
+```
+val n =10
+for (i <- 1 to n) print(i)
+```
+
+* It works with any collection
+```
+for (s <- "Hello") print(s)
+```
