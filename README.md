@@ -142,4 +142,21 @@ ab.trimEnd(5) // removes last 5 elements
 
 val a = ab.toArray
 val b = a.toBuffer
+ab.sum
+ab.sorted // returns new sorted array
+ab.reverse // return new reversed array
+Array(1,2,3).mkString("|") // return "1|2|3"
+```
+
+###### Map - It is a collection of pairs -> is a operator to assign value to key (By default maps are immutable)
+
+```
+val cricketScores = Map("Sachin" -> 100, "Dravid" -> 80, "Sehwag" -> 50)
+or mutable map
+import scala.collections.mutable.Map
+val cricketScores
+
+val sachinScore = cricketScores("Sachin");
+val dhoni = cricketScores.getOrElse("Dhoni",0)
+cricketScores("Dhoni") = 60 // Only in case of mutable maps
 ```
