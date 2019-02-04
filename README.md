@@ -117,11 +117,29 @@ Cant pass seq object in above function. to use seq do val s = sum(1 to 5 : _*)
 ##### Collections
 
 ###### Arrays
-* val nums = Array[Int](10); // All intialized to 0
+* val nums = new Array[Int](10); // All intialized to 0
 * val stringArray = Array("Hello" , "World") // The type is inferred
 * Assigning value to array ``` stringArray(0) = "Remove Hello" ```
 * Assigning value to array ``` stringArray(0) ```
 * Iterating array
 ```
 for (arr <- stringArray) println arr
+or 
+for (arr <- 0 until stringArray.length) println arr
+```
+###### ArrayBuffer similar to ArrayList in java (Variable length arrays)
+* import scala.collections.mutable.ArrayBuffer
+* val list = new ArrayBuffer[Int]
+
+```
+import scala.collections.mutable.ArrayBuffer
+var ab = ArrayBuffer('a','b','c', 'd')
+ab += 'e'
+ab += ('f','g','h')
+ab.remove(3)
+ab.insert(3,'x')
+ab.trimEnd(5) // removes last 5 elements
+
+val a = ab.toArray
+val b = a.toBuffer
 ```
