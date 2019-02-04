@@ -111,5 +111,6 @@ def sum(args: Int*) = {
    result
 }
 
+Cant pass seq object in above function. to use seq do val s = sum(1 to 5 : _*)
 ```
 
