@@ -179,3 +179,13 @@ val t = ("Neeraj",25,"Male", 4.5)                 //> t  : (String, Int, String,
 
 val (_, age, sex,_) = t     // This will create age and sex as new variables and intialize it will 25 , Male
 ```
+* Word count in scala
+```
+val words = new java.util.Scanner() /// complete this line
+var count = Map[String,Int]()
+while (words.hasNext) {
+val word = words.next()
+count = count + (word -> (count.getOrElse(word,0) + 1))
+}
+```
+##### Do exercise - 22,23,24 before  moving forward
