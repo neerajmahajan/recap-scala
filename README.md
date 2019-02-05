@@ -168,7 +168,7 @@ cricketScores("Dhoni") = 60 // Only in case of mutable maps
 for ((k,v) <- scores) yield (v,k) // result of yield is of same type .. here it will return map
 ```
 
-###### Tuples - Simillar to Table - Aggregate values of different type
+###### Tuples - Simillar to Table - Aggregate values of different type // Useful when a method return more than one value
 * tuples are 1 based. Tuple start with 1
 * val t = ("Neeraj",25,"Male",5.6)
 t._2 will give 25
