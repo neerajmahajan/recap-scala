@@ -160,3 +160,22 @@ val sachinScore = cricketScores("Sachin");
 val dhoni = cricketScores.getOrElse("Dhoni",0)
 cricketScores("Dhoni") = 60 // Only in case of mutable maps
 ```
+* Add map value with =+
+* remove map values with -=
+* Iterating array
+
+```
+for ((k,v) <- scores) yield (v,k) // result of yield is of same type .. here it will return map
+```
+
+###### Tuples - Simillar to Table - Aggregate values of different type
+* tuples are 1 based. Tuple start with 1
+* val t = ("Neeraj",25,"Male",5.6)
+t._2 will give 25
+
+* Usual way to use tuples
+```
+val t = ("Neeraj",25,"Male", 4.5)                 //> t  : (String, Int, String, Double) = (Neeraj,25,Male,4.5)
+
+val (_, age, sex,_) = t     // This will create age and sex as new variables and intialize it will 25 , Male
+```
