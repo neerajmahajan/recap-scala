@@ -189,10 +189,30 @@ count = count + (word -> (count.getOrElse(word,0) + 1))
 }
 ```
 ##### Do exercise - 22,23,24 before  moving forward
-To remove all negative numbers excluding first
+* To remove all negative numbers excluding first
 ```
 import scala.collection.mutable.ArrayBuffer
 val ab = ArrayBuffer(1,3,4,56,-5,6,-4,-2)
 val elementsToRemove = (for (i <- 0 until ab.length if (ab(i) < 0)) yield (ab(i))).drop(1)
 var x = for(e <- ab; if !elementsToRemove.contains(e)) yield (e)
+```
+* Word Count
+```
+object sheet1 {
+import scala.io.Source
+import scala.collection.mutable.ArrayBuffer
+val bs = Source.fromFile("data.txt")
+
+var words = ArrayBuffer[String]()
+
+bs.getLines().foreach { lines =>
+	words ++= lines.split("\\s+")
+}
+
+val wordCount = new scala.collection.mutable.HashMap[String,Int];
+words.foreach {word =>
+wordCount(word) = wordCount.getOrElseUpdate(word, 0) + 1
+}
+wordCount.toSeq.sortBy(_._2)
+}
 ```
