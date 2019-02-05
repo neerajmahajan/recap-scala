@@ -216,3 +216,34 @@ wordCount(word) = wordCount.getOrElseUpdate(word, 0) + 1
 wordCount.toSeq.sortBy(_._2)
 }
 ```
+
+##### Classess
+* A class can have instance variables in the ()
+* Or it can have instance variable like defined in java
+* if val is used, getters are provide and if var is used getters are automaically provided
+* We can have companion object with same in the same source file to contain static methods.
+* We can avoid new keyword to instantiate the object by instantiating through its companion object.
+* If class method does take any parameter, we can skip the ().
+* Due to above rule we can't find out whether method or instance variable is called on an object.
+* normal code can be written inside the class, that will get executed whenever the object is created or constructor is called.
+```
+class Time(val h: Int, val m: Int = 0) {
+
+	// def this(h:Int) {this(h,0) } auxillary constructor when only h is provided
+
+  val x: Boolean = if (0.to(23).contains(h) && 0.to(59).contains(m)) true else false
+
+  if (!x) { throw new IllegalArgumentException }
+
+  def before(other: Time) = h <= other.h && m < other.m
+  override def toString = f"${this.h}:${this.m}%02d"
+
+}
+
+val t = new Time(13,0)
+val t2 = new Time(13,56)
+
+println(t.before(t2))
+
+val t3 = new Time(25,61)
+```
