@@ -218,7 +218,7 @@ wordCount.toSeq.sortBy(_._2)
 ```
 
 ##### Classess
-* A class can have instance variables in the ()
+* A class can have instance variables as parameters like in functions.
 * Or it can have instance variable like defined in java
 * if val is used, getters are provide and if var is used getters are automaically provided
 * We can have companion object with same in the same source file to contain static methods.
