@@ -305,3 +305,25 @@ object s2 {
   morning < afternoon                             //> res0: Boolean = true
 }
 ```
+##### Packages
+* In scala packages are nested. eg com.mahajan.scala means package com contains package mahajan, package mahajan contains package scala.
+* In scala package structure doesn't need to have simillar directory structure we have in java
+* declaring com.mahajan.scala at top is shortcut to below structure
+
+```
+package com {
+	package mahajan{
+		package scala{
+			class Employee {
+			}
+		}
+	}
+}
+```
+
+##### Imports
+* In scala we use _ instead of * to import all classes inside a package
+* In scala we don't need to use static while importing static methods/fields from a class.
+* We can import multiple classes from same package in single statement ``` import java.awt.{Color,Font} ```
+* We can define an alias for a class name while importing it ``` import java.util.{HashMap => JavaHashMap} ```
+* We can hide a specific class while import ``` import java.{HashMap => _, _} ```
