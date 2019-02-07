@@ -378,6 +378,7 @@ hw = new HelloWorld() with FileLogger with TimpeStampLogger with ShortLogger
 ```
 
 #### Functional Programming
+* Give function a name if used multiple times.
 * Map is a fucntion that get applied to the each element of collection and returns a new collection.
 
 ```
@@ -389,5 +390,8 @@ object s3 {
  Array(1,2,3,4).map(tripple)                      //> res0: Array[Int] = Array(3, 6, 9, 12)
  Array(1,2,3,4).map(trippleUsingDef)              //> res1: Array[Int] = Array(3, 6, 9, 12)
  Array(1,2,3,4).map(x => x * 3)                   //> res2: Array[Int] = Array(3, 6, 9, 12)
+ Array(1,2,3,4).map((x:Int) => x * 3)             //> res3: Array[Int] = Array(3, 6, 9, 12)
+ Array(1,2,3,4).map(_ * 3)                        //> res4: Array[Int] = Array(3, 6, 9, 12)
 }
 ```
+* Higher order function - function which consume other function
