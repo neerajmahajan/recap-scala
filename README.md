@@ -406,3 +406,107 @@ object s3 {
                                                   //> res2: Int = 6
 }
 ```
+
+###### Closure
+
+* variables are kept stored even when function complete. eg 3 passed to mulBY function
+
+```
+object s3 {
+
+ def mulBy(factor:Double) = (x:Double) => factor * x
+                                                  //> mulBy: (factor: Double)Double => Double
+ val tripple = mulBy(3)                           //> tripple  : Double => Double = s3$$$Lambda$8/757108857@2133c8f8
+ tripple(5)                                       //> res0: Double = 15.0
+}
+```
+
+###### Curying
+* turning a function that takes two arguments into a function that takes one argument. This converstion will return a function that actually takes second argument.
+```
+object s3 {
+
+  def add(a: Int, b: Int) = a + b //> add: (a: Int, b: Int)Int
+
+  def addCurryingStyle(a: Int) = (b: Int) => a + b //> addCurryingStyle: (a: Int)Int => Int
+
+  addCurryingStyle(4)(5) //> res0: Int = 9
+
+  def mulCurryingStyle(a: Int)(b: Int) = a * b //> mulCurryingStyle: (a: Int)(b: Int)Int
+
+  mulCurryingStyle(4)(5) //> res1: Int = 20
+
+}
+```
+
+###### Passing block of code to a function
+
+```
+
+  def executeSomeCode(block: => Unit) {
+    println("Printing before executing block")
+    block
+    println("Printing after executing block")
+  }                                               //> executeSomeCode: (block: => Unit)Unit
+
+  executeSomeCode {
+    println("hello")
+    
+  }                                               //> Printing before executing block
+                                                  //| hello
+                                                  //| Printing after executing block
+}
+```
+
+###### Grouped
+
+```
+object s3 {
+
+  val zones = java.util.TimeZone.getAvailableIDs  //> zones  : Array[String] = Array(Africa/Abidjan, Africa/Accra, Africa/Addis_Aba
+                                                  //| ba, Africa/Algiers, Africa/Asmara, Africa/Asmera, Africa/Bamako, Africa/Bangu
+                                                  //| i, Africa/Banjul, Africa/Bissau, Africa/Blantyre, Africa/Brazzaville, Africa/
+                                                  //| Bujumbura, Africa/Cairo, Africa/Casablanca, Africa/Ceuta, Africa/Conakry, Afr
+                                                  //| ica/Dakar, Africa/Dar_es_Salaam, Africa/Djibouti, Africa/Douala, Africa/El_Aa
+                                                  //| iun, Africa/Freetown, Africa/Gaborone, Africa/Harare, Africa/Johannesburg, Af
+                                                  //| rica/Juba, Africa/Kampala, Africa/Khartoum, Africa/Kigali, Africa/Kinshasa, A
+                                                  //| frica/Lagos, Africa/Libreville, Africa/Lome, Africa/Luanda, Africa/Lubumbashi
+                                                  //| , Africa/Lusaka, Africa/Malabo, Africa/Maputo, Africa/Maseru, Africa/Mbabane,
+                                                  //|  Africa/Mogadishu, Africa/Monrovia, Africa/Nairobi, Africa/Ndjamena, Africa/N
+                                                  //| iamey, Africa/Nouakchott, Africa/Ouagadougou, Africa/Porto-Novo, Africa/Sao_T
+                                                  //| ome, Africa/Timbuktu, Africa/Tripoli, Africa/Tunis, Africa/Windhoek, America/
+                                                  //| Adak, America/Anchorage, 
+                                                  //| Output exceeds cutoff limit.
+  zones.map(_.split("/")).filter(_.length ==2).map(_(1)).grouped(10).toArray.map(_(0))
+                                                  //> res0: Array[String] = Array(Abidjan, Blantyre, Douala, Kinshasa, Mbabane, Ti
+                                                  //| mbuktu, Asuncion, Bogota, Chicago, Dawson_Creek, Fortaleza, Halifax, Kralend
+                                                  //| ijk, Martinique, Monterrey, Panama, Rankin_Inlet, Sao_Paulo, Swift_Current, 
+                                                  //| Winnipeg, Rothera, Aqtau, Bishkek, Dhaka, Hovd, Kathmandu, Magadan, Pontiana
+                                                  //| k, Shanghai, Tokyo, Yangon, Madeira, Currie, Perth, East, Yukon, GMT+3, GMT-
+                                                  //| 11, GMT-8, Astrakhan, Chisinau, Kiev, Monaco, San_Marino, Uzhgorod, Antanana
+                                                  //| rivo, Reunion, Efate, Johnston, Noumea, Tahiti, CST6CDT, Alaska, Pacific)
+}
+```
+
+##### Math // simillar to java switch
+
+```
+switch(ch) {            // Java
+
+}
+
+ch match {              // Scala // no break statement
+
+}
+
+```
+
+##### Exceptions
+
+try {
+
+
+}catch {
+
+case e:IOException => println(""Caught " + e)
+}
