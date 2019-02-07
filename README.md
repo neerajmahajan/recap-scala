@@ -394,4 +394,15 @@ object s3 {
  Array(1,2,3,4).map(_ * 3)                        //> res4: Array[Int] = Array(3, 6, 9, 12)
 }
 ```
-* Higher order function - function which consume other function
+* Higher order function - function which consume other function.
+* Filter retains the elements that fulfil a condition/predicate.
+* reduceLeft accept two paramater and applies the operation.
+```
+object s3 {
+
+ (0 to 4).map(_ * 2)                              //> res0: scala.collection.immutable.IndexedSeq[Int] = Vector(0, 2, 4, 6, 8)
+ (0 to 4).map(_ * 2).filter(x => x % 3 == 0)      //> res1: scala.collection.immutable.IndexedSeq[Int] = Vector(0, 6)
+ (0 to 4).map(_ * 2).filter(x => x % 3 == 0).reduceLeft(_ + _)
+                                                  //> res2: Int = 6
+}
+```
