@@ -273,3 +273,35 @@ object s2 {
 }
 
 ```
+
+```
+object s2 {
+  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+
+  class Time(h: Int, m: Int) {
+    private var minutesSinceMidnight = h * 60 + m
+    def hours = minutesSinceMidnight / 60
+    def minutes = minutesSinceMidnight % 60
+    def minutes_+(newValue: Int) { minutesSinceMidnight = hours * 60 + newValue: Int }
+
+    val x: Boolean = if (0.to(23).contains(h) && 0.to(59).contains(m)) true else false
+
+    if (!x) { throw new IllegalArgumentException }
+
+    def <(other: Time) = minutesSinceMidnight < other.minutesSinceMidnight
+
+    override def toString = f"${this.h}:${this.m}%02d"
+  }
+
+  object Time {
+
+    def apply(h: Int, m: Int) = {
+      new Time(h, m)
+    }
+  }
+
+  val morning = Time(9, 34)                       //> morning  : s2.Time = 9:34
+  val afternoon = Time(12, 45)                    //> afternoon  : s2.Time = 12:45
+  morning < afternoon                             //> res0: Boolean = true
+}
+```
