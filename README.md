@@ -339,7 +339,6 @@ package com {
 * Traits are used with **extend** instead of implements.
 * Traits cannot have construction parameter.
 * Mixins - advance feature of mixing multiple traits
-
 ```
 object s3 {
 
@@ -371,4 +370,9 @@ object s3 {
   hw.setName()                                    //> FileLogger Hello World
 }
 
+```
+* We can add multiple layers in traits using mutiple **with** - In this super method is chossen based on the layering defined. In below example ShortLogger will called first, it will do something and call TimpeStampLogger using super and TimpeStampLogger will call   FileLogger
+
+```
+hw = new HelloWorld() with FileLogger with TimpeStampLogger with ShortLogger
 ```
