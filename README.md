@@ -376,3 +376,18 @@ object s3 {
 ```
 hw = new HelloWorld() with FileLogger with TimpeStampLogger with ShortLogger
 ```
+
+#### Functional Programming
+* Map is a fucntion that get applied to the each element of collection and returns a new collection.
+
+```
+object s3 {
+
+ val tripple = (x:Int) => x * 3                   //> tripple  : Int => Int = s3$$$Lambda$3/2093176254@799f7e29
+ def trippleUsingDef(x:Int) = x * 3               //> trippleUsingDef: (x: Int)Int
+ 
+ Array(1,2,3,4).map(tripple)                      //> res0: Array[Int] = Array(3, 6, 9, 12)
+ Array(1,2,3,4).map(trippleUsingDef)              //> res1: Array[Int] = Array(3, 6, 9, 12)
+ Array(1,2,3,4).map(x => x * 3)                   //> res2: Array[Int] = Array(3, 6, 9, 12)
+}
+```
