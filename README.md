@@ -327,3 +327,48 @@ package com {
 * We can import multiple classes from same package in single statement ``` import java.awt.{Color,Font} ```
 * We can define an alias for a class name while importing it ``` import java.util.{HashMap => JavaHashMap} ```
 * We can hide a specific class while import ``` import java.{HashMap => _, _} ```
+* Imports can be put anywhere in a class,method,block or outside class.
+
+##### Inheritacnce
+* Similar to Java
+
+###### Traits - like interfaces
+* Traits can have concrete methods.
+* Traits can have concrete fields.
+* Traits can have abstract fields.
+* Traits are used with **extend** instead of implements.
+* Traits cannot have construction parameter.
+* Mixins - advance feature of mixing multiple traits
+
+```
+object s3 {
+
+  trait Logger {
+    def log(message: String) { println("No Logging") }
+  }
+
+  trait ConsoleLogger extends Logger {
+    override def log(message: String) { println("ConsoleLogger " + message) }
+  }
+
+  trait FileLogger extends Logger {
+    override def log(message: String) { println("FileLogger " + message) }
+  }
+
+  class HelloWorld extends Logger {
+    def setName() {
+      log("Hello World")
+    }
+  }
+
+  var hw = new HelloWorld()                       //> hw  : s3.HelloWorld = s3$HelloWorld@1a86f2f1
+  hw.setName()                                    //> No Logging
+
+  hw = new HelloWorld() with ConsoleLogger
+  hw.setName()                                    //> ConsoleLogger Hello World
+
+  hw = new HelloWorld() with FileLogger
+  hw.setName()                                    //> FileLogger Hello World
+}
+
+```
