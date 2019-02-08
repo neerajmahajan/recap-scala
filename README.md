@@ -15,6 +15,15 @@
 * Runs on JVM.
 * Scala sheets are interactive-- like sheel
 
+#### Building scala project
+* **sbt** is the build tool for scala like maven is used for java based projects.
+* Build template project
+    * sbt new https://github.com/lagom/lagom-scala.g8
+    * sbt new scala/hello-world.g8 (ssh based)
+* https://alvinalexander.com/scala/sbt-how-build-single-executable-jar-file-assembly
+* **Maven**
+    * https://docs.scala-lang.org/tutorials/scala-with-maven.html
+    * http://davidb.github.io/scala-maven-plugin/
 #### Varaibale
 * val is for immutable variable (final in java) ```val answer = 8+5+2```
 * var is for mutable variable  ```var response=43; response=50```
