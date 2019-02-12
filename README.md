@@ -403,7 +403,7 @@ object s3 {
  Array(1,2,3,4).map(_ * 3)                        //> res4: Array[Int] = Array(3, 6, 9, 12)
 }
 ```
-* Higher order function - function which consume other function.
+* **Higher order functions** - Higher order functions take other functions as parameters or return a function as a result. eg map,filter
 * Filter retains the elements that fulfil a condition/predicate.
 * reduceLeft accept two paramater and applies the operation.
 ```
