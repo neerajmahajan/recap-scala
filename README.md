@@ -519,3 +519,29 @@ try {
 
 case e:IOException => println(""Caught " + e)
 }
+
+
+##### Implicit Classes
+* Used to add methods to an existing class without modifying it's source code.
+* Wrap the implicit class into some object, so that it can be refer in other code blocks.
+```
+package learn.scala
+
+object CheckImplicit {
+  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
+
+  case class Employee(name: String, age: Int);
+
+  val emp = Employee("Neeraj", 25);               //> emp  : learn.scala.CheckImplicit.Employee = Employee(Neeraj,25)
+
+  implicit class EmployeeExtended(empl: Employee) {
+
+    def calculateAgeGroup() = {
+      "just testing"
+    }
+  }
+
+  print(emp.calculateAgeGroup)                    //> just testing
+  println("Hello")                                //> Hello
+}
+```
