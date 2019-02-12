@@ -545,3 +545,7 @@ object CheckImplicit {
   println("Hello")                                //> Hello
 }
 ```
+
+##### Case Classes
+* Case classes can be seen as plain and immutable data-holding objects that should exclusively depend on their constructor arguments.
+* Variables in case class are of val.
