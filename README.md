@@ -10,6 +10,7 @@
 
 #### Installation
 * Runs on JVM.
+* Scala is unusual because it is usually installed for each of your Scala projects rather than being installed system-wide.
 * Statically typed. compiler tell error.
 * Scalable from simple scripts to complex libraries.
 * Runs on JVM.
